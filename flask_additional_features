@@ -1,0 +1,19 @@
+from flask import request
+
+@app.route('/login', methods=['POST'])
+def login():
+    username = request.form['username']
+    password = request.form['password']
+    # process login here
+
+@app.route('/admin')
+def admin():
+    return redirect(url_for('login')) # dynamic url 
+
+# handle http request type
+@app.route('/data', methods=['GET', 'POST'])
+def data():
+    if request.method == 'POST':
+        # process POST request
+    if request.method == 'GET':
+        # process GET request 
